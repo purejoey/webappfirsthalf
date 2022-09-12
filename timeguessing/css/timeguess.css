@@ -18,9 +18,9 @@ body{
   text-align: center;
   background-color:rgba(233, 168, 227, 0.6);
   background-blend-mode: soft-light;
-  /* background-image: url(../img/backimg.JPG);
-  background-size: cover; */
-  overflow: hidden;
+  background-image: url(../img/fireworks.gif);
+  background-size: 0 0;
+/*  overflow: hidden;*/
 }
 
 header, main, footer, h1, h2, h3, p, div, table, .field, .btn-area, .filler01 {
@@ -135,6 +135,7 @@ footer> p {
 /* https://www.design-memo.com/coding/css-media-queries */
 /********************************************************/
 /* mobileのときのスタイル */
+/*@media screen and (max-width: 480px) {*/
 @media screen and (max-width: 480px) {
   .btn-container {
     margin: 0px 2px 20px;

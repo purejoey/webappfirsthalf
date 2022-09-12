@@ -39,8 +39,13 @@ start.addEventListener("click",
 stop.addEventListener("click",
   function() {
     // タイマーを"停止中"状態とする
-    audio_stop.src = "./sound/stop1.mp3";
-    audio_stop.play();
+    if (timer.textContent.substring(0, 5) === "00:10") {
+      audio_win.src = "./sound/stop2.mp3";
+      audio_win.play();
+    } else {
+      audio_stop.src = "./sound/stop1.mp3";
+      audio_stop.play();
+    }
     setButtonStateStopped();
     clearTimeout(timeoutid); //setTimeout()でセットしたタイマーを解除する際に使用
     stopTime = Date.now() - startTime;
@@ -88,7 +93,7 @@ function setButtonStateInitial() {
   stop.classList.add("js-unclickable");
   reset.classList.add("js-unclickable");
 
-  document.body.style.backgroundImage = 'none';
+  document.body.style.backgroundSize = "0 0";
 }
 
 // 状態:タイマー動作中
@@ -113,18 +118,10 @@ function setButtonStateStopped() {
   stop.classList.add("js-unclickable");
   reset.classList.remove("js-unclickable");
 
-//  if (timer.textContent === "00:10.000") {
+  //  if (timer.textContent === "00:10.000") {
   if (timer.textContent.substring(0, 5) === "00:10") {
-      document.body.style.backgroundImage = "url(./img/fireworks.gif)";
-    document.body.style.backgroundRepeat = "no-repeat";
-    if (isSmartPhone()) {
-      document.body.style.backgroundPosition = "75% 0%";
-      document.body.style.backgroundSize = "auto 100%";
-    } else {
-      document.body.style.backgroundSize = "100% 100%";
-    }
-    audio_win.src = "./sound/stop2.mp3";
-    audio_win.play();
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center center";
   }
 
   function isSmartPhone() {
