@@ -93,6 +93,7 @@ function setButtonStateInitial() {
   stop.classList.add("js-unclickable");
   reset.classList.add("js-unclickable");
 
+  document.body.style.backgroundColor = "rgba(233, 168, 227, 0.6)";
   document.body.style.backgroundSize = "0 0";
 }
 
@@ -122,6 +123,7 @@ function setButtonStateStopped() {
   if (timer.textContent.substring(0, 5) === "00:10") {
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundColor = "transparent";
   }
 
   function isSmartPhone() {
