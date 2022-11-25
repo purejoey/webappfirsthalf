@@ -19,7 +19,8 @@ body{
 /*  background-color:rgba(233, 168, 227, 0.6);*/
   background-blend-mode: soft-light;
   background-image: url(../img/fireworks.gif);
-  background-size: 0 0;
+/*  background-size: 0 0;*/
+  background-size: cover;
 /*  overflow: hidden;*/
 }
 
@@ -28,13 +29,14 @@ header, main, footer, h1, h2, h3, p, div, table, .field, .btn-area, .filler01 {
   padding: 0.1em;
 }
 
+
 /*******************************************************/
 /* ゲーム全体                                           */
 /*******************************************************/
 .wrapper {
   position: relative;/*相対位置*/
   max-width: 100vw;  /*すべての要素をbox-sizing:border-boxとしているので全て含めてmin-width:100vwに*/
-  min-height: 100vh; /*すべての要素をbox-sizing:border-boxとしているので全て含めてmin-height:100vhに*/
+/*  min-height: 100vh; /*すべての要素をbox-sizing:border-boxとしているので全て含めてmin-height:100vhに*/
   margin: 0;
   padding: 0;
   padding-bottom: 23px;/*footer+paddingの高さ*/
@@ -116,12 +118,47 @@ i {
 .js-unclickable {
   pointer-events: none;
 }
+
+.score-container {
+  margin: 5px 100px 5px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+table {
+  table-layout: fixed;
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  opacity: 0.9;
+  background: linear-gradient(to bottom, #fd49dc, #ffc778);
+}
+table th {
+  background: rgba(171, 169, 169, 0.5);
+}
+table th, table td {
+  padding: 0.5em 0;
+  border: solid 0.1em rgba(249, 249, 249, 0.5);
+  color: white;
+  text-align: center;
+}
+.width20 {
+  width: 20%;
+}
+.width30 {
+  width: 30%;
+}
+.width60 {
+  width: 60%;
+}
+
 /*******************************************************/
 /* footer                                              */
 /*******************************************************/
 footer> p {
-  position: absolute;/*←絶対位置*/
-  bottom: 10px; /*下に固定*/
+/*  position: absolute;/*←絶対位置*/
+/*  bottom: 10px; /*下に固定*/
+  position: relative;
   width: 100%;
   margin: 0px;
   padding: 1px;
@@ -137,10 +174,17 @@ footer> p {
 /* mobileのときのスタイル */
 /*@media screen and (max-width: 480px) {*/
 @media screen and (max-width: 480px) {
-  .btn-container {
+  body {
+    background-position: center center;
+    background-size: auto 900px;
+  }
+  .btn-container, .score-container {
     margin: 0px 2px 20px;
     font-size: 1em;
     font-weight: bold;
+  }
+  table {
+    width: 100%;
   }
   footer > p {
     margin: 0px;
